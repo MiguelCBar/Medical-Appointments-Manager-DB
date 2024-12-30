@@ -3,6 +3,8 @@
 ## Description
 This project is a **Medical Appointments Manager** implemented using Python and Flask. It serves as an interface to manage medical appointments, clinics, and their associated data stored in a PostgreSQL database. The system validates input, handles queries, and provides endpoints for listing clinics, specialties, doctors, and their available schedules. Additionally, it enables creating and canceling appointments with strict validation rules.
 
+The report documentation is in Portuguese.
+
 ## Features
 1. Clinic and Specialty Management:
     - List all clinics with their names and addresses.
@@ -20,7 +22,7 @@ This project is a **Medical Appointments Manager** implemented using Python and 
 4. Database Connection:
     - Efficiently interacts with the database using a connection pool for optimized performance.
     - Protects against invalid or duplicate entries.
-    
+
 5. Logging:
     - Configured logging for monitoring application activity, debugging, and error tracking.
 
