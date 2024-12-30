@@ -117,7 +117,6 @@ parametros_sintomas_chatgpt = ['Febre',
 'Fotofobia', 'Sensibilidade Sonora', 'Sensação de Cabeça Pesada', 'Tontura ao Levantar', 'Náusea Matinal',
 'Azia', 'Indigestão', 'Refluxo Gastroesofágico', 'Barriga Inchada', 'Vontade Frequente de Urinar']
 
-#50
 all_parametros_sintomas = [
     "Nome do sintoma", "Intensidade", "Duração", "Frequência", "Localização", "Início", "Fim",
     "Padrão", "Agravantes", "Aliviantes", "Acompanhantes", "Qualidade", "Periodicidade", "Evolução",
@@ -160,7 +159,6 @@ parametros_observacoes_metricas_chatgpt = [
 ('Tempo de Coagulação Ativado (segundos)', 30), ('Tempo de Lise do Coágulo (minutos)', 20)
 ]
 
-#20 testes
 all_parametros_observacoes_metricas = [
     "Temperatura corporal (°C)", "Pressão arterial (mmHg)", "Frequência cardíaca (bpm)", "Frequência respiratória (rpm)", 
     "Nível de dor (escala 0-10)", "Saturação de oxigênio (%)", "Peso (kg)", "Altura (cm)", "Índice de Massa Corporal (IMC)", 
@@ -242,7 +240,7 @@ medicos_por_clinicas = {
 }
 
 medico_dic ={
-    "nif_medico": "", #PK
+    "nif_medico": "", 
     "nome_medico": "",
     "telefone_medico": "",    
     "morada_medico": "",
@@ -251,7 +249,7 @@ medico_dic ={
 medicos_lista = []
 
 enfermeiro_dic ={
-    "nif_enfermeiro": "", #PK
+    "nif_enfermeiro": "", 
     "nome_enfermeiro": "",
     "telefone_enfermeiro": "",    
     "morada_enfermeiro": "",
@@ -273,7 +271,6 @@ clinica_dic ={
     "nome_clinica": "",
     "telefone_clinica": "",
     "morada_clinica": "",
-    #"medicos" ainda n sei
 }
 clinicas_lista = []
 
@@ -301,7 +298,6 @@ receita_dic ={
 }
 receitas_lista = []
 
-#esta talvez nao seja precisa posso tar a ser burra
 medicos_clinicas = {
     "clinica Medis":[],
     "clinica miMed":[],
@@ -320,7 +316,7 @@ counter_consultas_c_receitas = 0
 
 """----------------------------------------Funcoes piquenas cria-----------------------------------"""
 
-#FUNCOES $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+#FUNCOES
 def cria_nome(): #faz um nome random
     return random.choice(all_nomes) + " " + random.choice(all_apelidos)
 
@@ -424,7 +420,6 @@ def cria_medicamentos_consulta():
         medicamento = random.choice(all_medicamentos)
         if medicamento not in medicamentos_consulta:
             medicamentos_consulta.append(medicamento)            
-    #medicamento_consulta[id_consulta] = medicamentos_consulta
     return medicamentos_consulta
 
 def cria_quantidades(id_consulta):
@@ -471,9 +466,6 @@ def cria_observacoes_metrica():
             metricas_return.append(metrica_atual)
             n+=1
     return metricas_return
-
-
-#def cria_quantidades(medicamentos_lista):
 
 
 """---------------------------------Classes e Gera respetivo-----------------------------------------"""
@@ -543,7 +535,7 @@ class Paciente:
             self.morada = morada
             self.data_nasc = cria_data_nascimento()
         else:
-            self.ssn = cria_ssn() #PK
+            self.ssn = cria_ssn()
             self.nif = cria_nif()
             self.nome = cria_nome()
             self.telefone = cria_telefone()
@@ -776,31 +768,7 @@ def gera_receita(id_counter_consulta):
         medicamentos_lista = cria_medicamentos_consulta()
         for medicamento in medicamentos_lista:
             quantidade = random.randint(1,3)
-            populate_file.write(f"('{codigo_sns}', '{medicamento}', {quantidade}),\n")
-
-
-        #receita = Receita()
-        #receitas_lista.append(())
-        #receita_file.write(f"INSERT INTO receita (codigo_sns, medicamentos, quantidades) VALUES ('{receita.codigo_sns}', '{receita.medicamentos}', '{receita.quantidades}');\n")
-   
-
-
-
-class Observacao:
-    def __init__(self, id) -> None:
-        '''
-        self.id_consulta = id
-        self.parametro = cria_observacoes_sintomas
-        '''
-        pass    
-
-        #NADA FEITO MAS NA 2 O PENULTIMO PONTON EXPLICA BUE BEM
-        #id da consulta (fazem random de 0 ao nro que o id vai estar de momento)
-        #parametro??
-        #valor ???
-        #PK id parametro
-        
-#receita
+            populate_file.write(f"('{codigo_sns}', '{medicamento}', {quantidade}),\n")    
 
 def gera_observacao(id_counter_consultas):
     populate_file.write(f"INSERT INTO observacao (id, parametro, valor) VALUES\n")
