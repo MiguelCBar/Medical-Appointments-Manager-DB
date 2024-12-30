@@ -5,20 +5,24 @@ This project is a **Medical Appointments Manager** implemented using Python and 
 
 ## Features
 1. Clinic and Specialty Management:
-- List all clinics with their names and addresses.
-- Retrieve specialties offered at a specific clinic.
+    - List all clinics with their names and addresses.
+    - Retrieve specialties offered at a specific clinic.
+
 2. Doctor and Appointment Queries:
-- List doctors of a specific specialty working at a clinic along with their first three available time slots.
-- Register a medical appointment for a patient.
-- Cancel an upcoming appointment for a patient.
+    - List doctors of a specific specialty working at a clinic along with their first three available time slots.
+    - Register a medical appointment for a patient.
+    - Cancel an upcoming appointment for a patient.
+
 3. Data Validation:
-- Validate SSN (Social Security Number) and NIF (Tax Identification Number) for correct formats.
-- Validate appointment date and time for availability, working hours, and scheduling rules.
+    - Validate SSN (Social Security Number) and NIF (Tax Identification Number) for correct formats.
+    - Validate appointment date and time for availability, working hours, and scheduling rules.
+
 4. Database Connection:
-- Efficiently interacts with the database using a connection pool for optimized performance.
-- Protects against invalid or duplicate entries.
+    - Efficiently interacts with the database using a connection pool for optimized performance.
+    - Protects against invalid or duplicate entries.
+    
 5. Logging:
-- Configured logging for monitoring application activity, debugging, and error tracking.
+    - Configured logging for monitoring application activity, debugging, and error tracking.
 
 ## Requirements
 - Python 3.8+
